@@ -1,0 +1,16 @@
+{% extends 'travel_wishlist/layout.html' %}
+{% block head %}
+    <!-- in head -->
+{% endblock %}
+{% block body %}
+    <h1>todo: list of visited places</h1>
+
+    {% for place in visited %}
+        <div>
+            {{ place.name }}
+        </div>
+    {% empty %}
+        <p>You have visited no places</p>
+    {% endfor %}
+    <a href="{% url 'place_list' %}">Your Wish List</a>
+{% endblock %}
